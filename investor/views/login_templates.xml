@@ -1,0 +1,14 @@
+<odoo>
+    <template id="investor_login" inherit_id="web.login">
+        <xpath expr="//form/div[contains(@class, 'field-login')]" position="after">
+            <div class="mb-3">
+                <label for="broker_id" class="form-label">Broker</label>
+                <select name="broker_id" id="broker_id" class="form-select">
+                    <t t-foreach="request.env['investor.broker'].search([])" t-as="broker">
+                        <option t-att-value="broker.id"><t t-esc="broker.name"/></option>
+                    </t>
+                </select>
+            </div>
+        </xpath>
+    </template>
+</odoo>
