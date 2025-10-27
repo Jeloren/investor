@@ -1,14 +1,59 @@
 <odoo>
     <template id="investor_login" inherit_id="web.login">
-        <xpath expr="//form/div[contains(@class, 'field-login')]" position="after">
-            <div class="mb-3">
-                <label for="broker_id" class="form-label">Broker</label>
+    <xpath expr="//form/div[contains(@class, 'field-login')]" position="after">
+            <div id="broker_field_container" class="mb-3">
+                <label for="broker_id" class="form-label">Выберите брокера</label>
                 <select name="broker_id" id="broker_id" class="form-select">
-                    <t t-foreach="request.env['investor.broker'].search([])" t-as="broker">
-                        <option t-att-value="broker.id"><t t-esc="broker.name"/></option>
+                    <option value="">-- выберите брокера --</option>
+                    <t t-foreach="request.env['investor.broker'].sudo().search([])" t-as="broker">
+                        <option t-att-value="broker.id">
+                            <t t-esc="broker.name"/>
+                        </option>
                     </t>
                 </select>
             </div>
         </xpath>
+        
+
+        <xpath expr="//t[@t-if='debug']" position="after">
+            <div class="text-center mb-3">
+                <button type="button" id="toggle_broker_login" class="btn btn-link btn-sm">
+                    Войти как брокер
+                </button>
+            </div>
+
+            <script type="text/javascript">
+                document.addEventListener("DOMContentLoaded", function () {
+                    const toggleButton = document.getElementById("toggle_broker_login");
+                    const brokerField = document.getElementById("broker_field_container");
+                    let visible = true;
+
+                    const brokerSelect = document.getElementById('broker_id');
+                    if (brokerSelect) {
+                        brokerSelect.disabled = false;
+                    }
+
+                    toggleButton?.addEventListener("click", function () {
+                        visible = !visible;
+                        brokerField.style.display = visible ? "block" : "none";
+                        toggleButton.textContent = visible ? "Войти как брокер" : "Войти как инвестор";
+                        if (brokerSelect) {
+                            brokerSelect.disabled = !visible;
+                        }
+                    });
+                });
+            </script>
+        </xpath>
     </template>
+
+    <template id="investor.frontend_layout" inherit_id="web.frontend_layout">
+        <xpath expr="//div[@id='wrapwrap']" position="before">
+            <t t-if="request.params.get('missing_broker')">
+                <div class="alert alert-danger text-center" role="alert">
+                    Вход для инвестора невозможен без выбора брокера. Пожалуйста, выберите брокера и попробуйте снова.
+                </div>
+            </t>
+        </xpath>
+    </template>
+        
 </odoo>

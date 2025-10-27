@@ -44,3 +44,13 @@ class Investor(models.Model):
         for record in self:
             if record.phone and not re.match(r"\+7\s\(\d{3}\)\s\d{3}-\d{2}-\d{2}", record.phone):
                 raise ValidationError("Неверный формат телефона. Пример: +7 (999) 123-45-67")
+    
+    @api.model_create_multi
+    def create(self, vals_list):
+        """Переопределяем create для установки user_id из связанного пользователя"""
+        investors = super().create(vals_list)
+        for investor in investors:
+            user = self.env['res.users'].search([('investor_id', '=', investor.id)], limit=1)
+            if user and not investor.user_id:
+                investor.write({'user_id': user.id})
+        return investors

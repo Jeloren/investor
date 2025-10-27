@@ -4,3 +4,5 @@ from . import account
 from . import asset
 from . import transaction
 from . import res_users
+from . import income_report_wizard
+from . import income_report

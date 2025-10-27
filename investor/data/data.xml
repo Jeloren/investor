@@ -45,7 +45,7 @@
         <record id="investor_3" model="investor.investor">
             <field name="name">Сидоров Алексей Викторович</field>
             <field name="birth_date">1998-02-10</field>
-            <field name="phone">+7 (903) 555-88-99</field>
+            <field name="phone">+7 (993) 555-88-99</field>
             <field name="email">sidorov.av@example.com</field>
             <field name="broker_ids" eval="[(6, 0, [ref('broker_1')])]"/>
         </record>

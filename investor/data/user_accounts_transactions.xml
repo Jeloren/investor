@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <!-- Счета для инвесторов -->
+        <!-- Иванов Иван Иванович (investor_user_1) - брокер_1 -->
+        <record id="user_account_1" model="investor.account">
+            <field name="name">40817810111110000001</field>
+            <field name="account_type">broker</field>
+            <field name="open_date" eval="DateTime.now() - relativedelta(months=6)"/>
+            <field name="status">active</field>
+            <field name="investor_id" ref="investor.investor_user_1"/>
+            <field name="broker_id" ref="investor.broker_1"/>
+        </record>
+
+        <!-- Петрова Мария Сергеевна (investor_user_2) - брокер_3 -->
+        <record id="user_account_2" model="investor.account">
+            <field name="name">40817810111120000002</field>
+            <field name="account_type">iis</field>
+            <field name="open_date" eval="DateTime.now() - relativedelta(months=12)"/>
+            <field name="status">active</field>
+            <field name="investor_id" ref="investor.investor_user_2"/>
+            <field name="broker_id" ref="investor.broker_3"/>
+        </record>
+
+        <!-- Сидоров Алексей Викторович (investor_user_3) - брокер_1 -->
+        <record id="user_account_3" model="investor.account">
+            <field name="name">40817810111130000003</field>
+            <field name="account_type">broker</field>
+            <field name="open_date" eval="DateTime.now() - relativedelta(days=30)"/>
+            <field name="status">active</field>
+            <field name="investor_id" ref="investor.investor_user_3"/>
+            <field name="broker_id" ref="investor.broker_1"/>
+        </record>
+
+        <!-- Кузнецова Ольга Дмитриевна (investor_user_4) - брокер_4 -->
+        <record id="user_account_4" model="investor.account">
+            <field name="name">40817810111140000004</field>
+            <field name="account_type">depository</field>
+            <field name="open_date" eval="DateTime.now() - relativedelta(months=18)"/>
+            <field name="status">active</field>
+            <field name="investor_id" ref="investor.investor_user_4"/>
+            <field name="broker_id" ref="investor.broker_4"/>
+        </record>
+
+        <!-- Михайлов Павел Андреевич (investor_user_5) - брокер_2 -->
+        <record id="user_account_5" model="investor.account">
+            <field name="name">40817810111150000005</field>
+            <field name="account_type">broker</field>
+            <field name="open_date" eval="DateTime.now() - relativedelta(months=3)"/>
+            <field name="status">active</field>
+            <field name="investor_id" ref="investor.investor_user_5"/>
+            <field name="broker_id" ref="investor.broker_2"/>
+        </record>
+
+        <!-- Романова Елена Игоревна (investor_user_6) - брокер_1 -->
+        <record id="user_account_6" model="investor.account">
+            <field name="name">40817810111160000006</field>
+            <field name="account_type">iis</field>
+            <field name="open_date" eval="DateTime.now() - relativedelta(months=9)"/>
+            <field name="status">active</field>
+            <field name="investor_id" ref="investor.investor_user_6"/>
+            <field name="broker_id" ref="investor.broker_1"/>
+        </record>
+
+        <!-- Федоров Дмитрий Николаевич (investor_user_7) - брокер_2 -->
+        <record id="user_account_7" model="investor.account">
+            <field name="name">40817810111170000007</field>
+            <field name="account_type">broker</field>
+            <field name="open_date" eval="DateTime.now() - relativedelta(months=15)"/>
+            <field name="status">active</field>
+            <field name="investor_id" ref="investor.investor_user_7"/>
+            <field name="broker_id" ref="investor.broker_2"/>
+        </record>
+
+        <!-- Новикова Татьяна Владимировна (investor_user_8) - брокер_3 -->
+        <record id="user_account_8" model="investor.account">
+            <field name="name">40817810111180000008</field>
+            <field name="account_type">iis</field>
+            <field name="open_date" eval="DateTime.now() - relativedelta(months=7)"/>
+            <field name="status">active</field>
+            <field name="investor_id" ref="investor.investor_user_8"/>
+            <field name="broker_id" ref="investor.broker_3"/>
+        </record>
+
+        <!-- Транзакции для Иванова (user_account_1) -->
+        <record id="user_trans_1" model="investor.transaction">
+            <field name="transaction_datetime" eval="DateTime.now() - relativedelta(days=30)"/>
+            <field name="operation_type">deposit</field>
+            <field name="quantity">1</field>
+            <field name="amount">100000</field>
+            <field name="currency">RUB</field>
+            <field name="account_id" ref="user_account_1"/>
+            <field name="description">Первоначальное пополнение счета</field>
+        </record>
+
+        <record id="user_trans_2" model="investor.transaction">
+            <field name="transaction_datetime" eval="DateTime.now() - relativedelta(days=25)"/>
+            <field name="operation_type">buy</field>
+            <field name="quantity">200</field>
+            <field name="amount">35100</field>
+            <field name="currency">RUB</field>
+            <field name="account_id" ref="user_account_1"/>
+            <field name="asset_id" ref="investor.asset_1"/>
+            <field name="description">Покупка акций Газпрома</field>
+        </record>
+
+        <record id="user_trans_3" model="investor.transaction">
+            <field name="transaction_datetime" eval="DateTime.now() - relativedelta(days=20)"/>
+            <field name="operation_type">buy</field>
+            <field name="quantity">50</field>
+            <field name="amount">13540</field>
+            <field name="currency">RUB</field>
+            <field name="account_id" ref="user_account_1"/>
+            <field name="asset_id" ref="investor.asset_2"/>
+            <field name="description">Покупка акций Сбербанка</field>
+        </record>
+
+        <record id="user_trans_4" model="investor.transaction">
+            <field name="transaction_datetime" eval="DateTime.now() - relativedelta(days=10)"/>
+            <field name="operation_type">commission</field>
+            <field name="quantity">1</field>
+            <field name="amount">29</field>
+            <field name="currency">RUB</field>
+            <field name="account_id" ref="user_account_1"/>
+            <field name="description">Комиссия за обслуживание</field>
+        </record>
+
+        <!-- Транзакции для Петровой (user_account_2) -->
+        <record id="user_trans_5" model="investor.transaction">
+            <field name="transaction_datetime" eval="DateTime.now() - relativedelta(days=90)"/>
+            <field name="operation_type">deposit</field>
+            <field name="quantity">1</field>
+            <field name="amount">400000</field>
+            <field name="currency">RUB</field>
+            <field name="account_id" ref="user_account_2"/>
+            <field name="description">Пополнение ИИС на налоговый вычет</field>
+        </record>
+
+        <record id="user_trans_6" model="investor.transaction">
+            <field name="transaction_datetime" eval="DateTime.now() - relativedelta(days=85)"/>
+            <field name="operation_type">buy</field>
+            <field name="quantity">10</field>
+            <field name="amount">17225</field>
+            <field name="currency">RUB</field>
+            <field name="account_id" ref="user_account_2"/>
+            <field name="asset_id" ref="investor.asset_3"/>
+            <field name="description">Покупка акций Apple</field>
+        </record>
+
+        <record id="user_trans_7" model="investor.transaction">
+            <field name="transaction_datetime" eval="DateTime.now() - relativedelta(days=60)"/>
+            <field name="operation_type">buy</field>
+            <field name="quantity">20</field>
+            <field name="amount">49270</field>
+            <field name="currency">RUB</field>
+            <field name="account_id" ref="user_account_2"/>
+            <field name="asset_id" ref="investor.asset_4"/>
+            <field name="description">Покупка ОФЗ</field>
+        </record>
+
+        <!-- Транзакции для Сидорова (user_account_3) -->
+        <record id="user_trans_8" model="investor.transaction">
+            <field name="transaction_datetime" eval="DateTime.now() - relativedelta(days=20)"/>
+            <field name="operation_type">deposit</field>
+            <field name="quantity">1</field>
+            <field name="amount">50000</field>
+            <field name="currency">RUB</field>
+            <field name="account_id" ref="user_account_3"/>
+            <field name="description">Открытие брокерского счета</field>
+        </record>
+
+        <record id="user_trans_9" model="investor.transaction">
+            <field name="transaction_datetime" eval="DateTime.now() - relativedelta(days=15)"/>
+            <field name="operation_type">buy</field>
+            <field name="quantity">100</field>
+            <field name="amount">17550</field>
+            <field name="currency">RUB</field>
+            <field name="account_id" ref="user_account_3"/>
+            <field name="asset_id" ref="investor.asset_1"/>
+            <field name="description">Покупка акций Газпрома</field>
+        </record>
+
+        <!-- Транзакции для Кузнецовой (user_account_4) -->
+        <record id="user_trans_10" model="investor.transaction">
+            <field name="transaction_datetime" eval="DateTime.now() - relativedelta(days=120)"/>
+            <field name="operation_type">deposit</field>
+            <field name="quantity">1</field>
+            <field name="amount">250000</field>
+            <field name="currency">RUB</field>
+            <field name="account_id" ref="user_account_4"/>
+            <field name="description">Пополнение депозитарного счета</field>
+        </record>
+
+        <record id="user_trans_11" model="investor.transaction">
+            <field name="transaction_datetime" eval="DateTime.now() - relativedelta(days=100)"/>
+            <field name="operation_type">buy</field>
+            <field name="quantity">300</field>
+            <field name="amount">81240</field>
+            <field name="currency">RUB</field>
+            <field name="account_id" ref="user_account_4"/>
+            <field name="asset_id" ref="investor.asset_2"/>
+            <field name="description">Покупка акций Сбербанка</field>
+        </record>
+
+        <record id="user_trans_12" model="investor.transaction">
+            <field name="transaction_datetime" eval="DateTime.now() - relativedelta(days=60)"/>
+            <field name="operation_type">buy</field>
+            <field name="quantity">100</field>
+            <field name="amount">17550</field>
+            <field name="currency">RUB</field>
+            <field name="account_id" ref="user_account_4"/>
+            <field name="asset_id" ref="investor.asset_1"/>
+            <field name="description">Покупка акций Газпрома</field>
+        </record>
+
+        <!-- Транзакции для Михайлова (user_account_5) -->
+        <record id="user_trans_13" model="investor.transaction">
+            <field name="transaction_datetime" eval="DateTime.now() - relativedelta(days=60)"/>
+            <field name="operation_type">deposit</field>
+            <field name="quantity">1</field>
+            <field name="amount">150000</field>
+            <field name="currency">RUB</field>
+            <field name="account_id" ref="user_account_5"/>
+            <field name="description">Пополнение счета</field>
+        </record>
+
+        <record id="user_trans_14" model="investor.transaction">
+            <field name="transaction_datetime" eval="DateTime.now() - relativedelta(days=50)"/>
+            <field name="operation_type">buy</field>
+            <field name="quantity">150</field>
+            <field name="amount">40620</field>
+            <field name="currency">RUB</field>
+            <field name="account_id" ref="user_account_5"/>
+            <field name="asset_id" ref="investor.asset_2"/>
+            <field name="description">Покупка акций Сбербанка</field>
+        </record>
+
+        <record id="user_trans_15" model="investor.transaction">
+            <field name="transaction_datetime" eval="DateTime.now() - relativedelta(days=30)"/>
+            <field name="operation_type">buy</field>
+            <field name="quantity">50</field>
+            <field name="amount">49270</field>
+            <field name="currency">RUB</field>
+            <field name="account_id" ref="user_account_5"/>
+            <field name="asset_id" ref="investor.asset_4"/>
+            <field name="description">Покупка ОФЗ</field>
+        </record>
+
+        <!-- Транзакции для Романовой (user_account_6) -->
+        <record id="user_trans_16" model="investor.transaction">
+            <field name="transaction_datetime" eval="DateTime.now() - relativedelta(days=100)"/>
+            <field name="operation_type">deposit</field>
+            <field name="quantity">1</field>
+            <field name="amount">300000</field>
+            <field name="currency">RUB</field>
+            <field name="account_id" ref="user_account_6"/>
+            <field name="description">Пополнение ИИС типа А</field>
+        </record>
+
+        <record id="user_trans_17" model="investor.transaction">
+            <field name="transaction_datetime" eval="DateTime.now() - relativedelta(days=90)"/>
+            <field name="operation_type">buy</field>
+            <field name="quantity">5</field>
+            <field name="amount">8612.5</field>
+            <field name="currency">RUB</field>
+            <field name="account_id" ref="user_account_6"/>
+            <field name="asset_id" ref="investor.asset_3"/>
+            <field name="description">Покупка акций Apple</field>
+        </record>
+
+        <record id="user_trans_18" model="investor.transaction">
+            <field name="transaction_datetime" eval="DateTime.now() - relativedelta(days=70)"/>
+            <field name="operation_type">buy</field>
+            <field name="quantity">80</field>
+            <field name="amount">14040</field>
+            <field name="currency">RUB</field>
+            <field name="account_id" ref="user_account_6"/>
+            <field name="asset_id" ref="investor.asset_1"/>
+            <field name="description">Покупка акций Газпрома</field>
+        </record>
+
+        <!-- Транзакции для Федорова (user_account_7) -->
+        <record id="user_trans_19" model="investor.transaction">
+            <field name="transaction_datetime" eval="DateTime.now() - relativedelta(days=200)"/>
+            <field name="operation_type">deposit</field>
+            <field name="quantity">1</field>
+            <field name="amount">200000</field>
+            <field name="currency">RUB</field>
+            <field name="account_id" ref="user_account_7"/>
+            <field name="description">Открытие брокерского счета</field>
+        </record>
+
+        <record id="user_trans_20" model="investor.transaction">
+            <field name="transaction_datetime" eval="DateTime.now() - relativedelta(days=180)"/>
+            <field name="operation_type">buy</field>
+            <field name="quantity">250</field>
+            <field name="amount">67650</field>
+            <field name="currency">RUB</field>
+            <field name="account_id" ref="user_account_7"/>
+            <field name="asset_id" ref="investor.asset_2"/>
+            <field name="description">Покупка акций Сбербанка</field>
+        </record>
+
+        <record id="user_trans_21" model="investor.transaction">
+            <field name="transaction_datetime" eval="DateTime.now() - relativedelta(days=100)"/>
+            <field name="operation_type">commission</field>
+            <field name="quantity">1</field>
+            <field name="amount">29</field>
+            <field name="currency">RUB</field>
+            <field name="account_id" ref="user_account_7"/>
+            <field name="description">Ежемесячная комиссия за обслуживание</field>
+        </record>
+
+        <!-- Транзакции для Новиковой (user_account_8) -->
+        <record id="user_trans_22" model="investor.transaction">
+            <field name="transaction_datetime" eval="DateTime.now() - relativedelta(days=60)"/>
+            <field name="operation_type">deposit</field>
+            <field name="quantity">1</field>
+            <field name="amount">100000</field>
+            <field name="currency">RUB</field>
+            <field name="account_id" ref="user_account_8"/>
+            <field name="description">Пополнение ИИС</field>
+        </record>
+
+        <record id="user_trans_23" model="investor.transaction">
+            <field name="transaction_datetime" eval="DateTime.now() - relativedelta(days=45)"/>
+            <field name="operation_type">buy</field>
+            <field name="quantity">100</field>
+            <field name="amount">17550</field>
+            <field name="currency">RUB</field>
+            <field name="account_id" ref="user_account_8"/>
+            <field name="asset_id" ref="investor.asset_1"/>
+            <field name="description">Покупка акций Газпрома</field>
+        </record>
+
+        <record id="user_trans_24" model="investor.transaction">
+            <field name="transaction_datetime" eval="DateTime.now() - relativedelta(days=30)"/>
+            <field name="operation_type">buy</field>
+            <field name="quantity">50</field>
+            <field name="amount">13540</field>
+            <field name="currency">RUB</field>
+            <field name="account_id" ref="user_account_8"/>
+            <field name="asset_id" ref="investor.asset_2"/>
+            <field name="description">Покупка акций Сбербанка</field>
+        </record>
+
+        <record id="user_trans_25" model="investor.transaction">
+            <field name="transaction_datetime" eval="DateTime.now() - relativedelta(days=20)"/>
+            <field name="operation_type">buy</field>
+            <field name="quantity">50</field>
+            <field name="amount">49270</field>
+            <field name="currency">RUB</field>
+            <field name="account_id" ref="user_account_8"/>
+            <field name="asset_id" ref="investor.asset_4"/>
+            <field name="description">Покупка ОФЗ</field>
+        </record>
+
+    </data>
+</odoo>
+

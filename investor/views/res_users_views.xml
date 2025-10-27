@@ -5,13 +5,45 @@
         <field name="model">res.users</field>
         <field name="inherit_id" ref="base.view_users_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//page[@name='preferences']" position="after">
-                <page string="Брокер пользователя">   
+            <xpath expr="//page[@name='access_rights']" position="before">
+                <page string="Инвестиции" name="investor_info">   
                     <group>             
                         <field name="broker_id"/>
+                        <field name="id" invisible="1"/>
+                        <field name="investor_id" invisible="1"/>
+                    </group>
+
+                    <group string="Инвестиции">
+                        <field name="investor_role_type" widget="radio"/>
+                    </group>
+                    <group invisible="investor_role_type not in ('investor', 'admin') or id">
+                        <field name="inv_birth_date" required="investor_role_type=='investor'"/>
+                        <field name="inv_phone" widget="phone" required="investor_role_type=='investor'"/>
+                    </group>
+
+                    <group invisible="investor_role_type not in ('broker', 'admin') or id">
+                        <field name="br_license_number" required="investor_role_type=='broker'"/>
+                        <field name="br_contact_details"/>
+                    </group>
+
+
+                    <group invisible="investor_role_type not in ('investor', 'admin') or not id">
+                        <field name="r_inv_name"/>
+                        <field name="r_birth_date"/>
+                        <field name="r_phone" widget="phone"/>
+                        <field name="r_email" widget="email"/>
+                    </group>
+
+                    <group invisible="investor_role_type not in ('broker', 'admin') or not id">
+                        <field name="r_br_name"/> 
+                        <field name="r_license_number"/>
+                        <field name="r_contact_details"/>
                     </group>
                 </page>
             </xpath>
+            <!-- <xpath expr="//field[@name='groups_id']" position="replace">
+                <field name="groups_id" widget="many2many_checkboxes" domain="[('name', 'not in', [ 'Администратор инвестиций', 'Брокер', 'Инвестор'])]"/>
+            </xpath> -->
         </field>
     </record>
 </odoo>

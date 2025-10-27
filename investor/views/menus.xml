@@ -18,8 +18,19 @@
     <menuitem id="menu_investor_transactions"
               name="Транзакции"
               parent="menu_investor_main"
-              action="action_transaction"
+              action="open_transactions"
               sequence="20"/>
+
+    <menuitem id="menu_investor_reports"
+              name="Отчёты"
+              parent="menu_investor_root"
+              sequence="15"/>
+
+    <menuitem id="menu_investor_income_report"
+              name="Отчёт о доходах"
+              parent="menu_investor_reports"
+              action="action_income_report_wizard"
+              sequence="10"/>
 
     <menuitem id="menu_investor_directory"
               name="Справочники"

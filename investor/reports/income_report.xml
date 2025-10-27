@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Шаблон отчёта -->
+    <template id="investor.income_report" name="investor.income_report">
+        <t t-call="web.html_container">
+        <div class="page" style="width: 210mm; min-height: 297mm; margin: 0 auto; box-shadow: 0 0 5px rgba(0,0,0,0.1); padding: 15mm;">
+
+            <t t-foreach="docs" t-as="doc">
+                <div class="page">
+                    <!-- Шапка отчёта -->
+                    <div class="oe_structure">
+                        <div style="text-align: center; margin-bottom: 30px;">
+                            <h1 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">
+                                ОТЧЁТ О ДОХОДАХ ИНВЕСТОРА
+                            </h1>
+                            <p style="font-size: 14px; color: #666;">
+                                За период с <span t-esc="doc.date_from"/> по <span t-esc="doc.date_to"/>
+                            </p>
+                        </div>
+                        
+                        <!-- Информация об инвесторе -->
+                        <div style="border: 2px solid #000; padding: 15px; margin-bottom: 20px;">
+                            <h2 style="font-size: 16px; font-weight: bold; margin-bottom: 15px; text-align: center;">
+                                ИНФОРМАЦИЯ ОБ ИНВЕСТОРЕ
+                            </h2>
+                            <table style="width: 100%; border-collapse: collapse;">
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid #000; font-weight: bold; width: 40%;">
+                                        ФИО:
+                                    </td>
+                                    <td style="padding: 8px; border: 1px solid #000;">
+                                        <span t-esc="doc.investor_id.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid #000; font-weight: bold;">
+                                        Дата рождения:
+                                    </td>
+                                    <td style="padding: 8px; border: 1px solid #000;">
+                                        <span t-esc="doc.investor_id.birth_date"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid #000; font-weight: bold;">
+                                        Контактный телефон:
+                                    </td>
+                                    <td style="padding: 8px; border: 1px solid #000;">
+                                        <span t-esc="doc.investor_id.phone"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid #000; font-weight: bold;">
+                                        Электронная почта:
+                                    </td>
+                                    <td style="padding: 8px; border: 1px solid #000;">
+                                        <span t-esc="doc.investor_id.email"/>
+                                    </td>
+                                </tr>
+                                <tr t-if="doc.account_id">
+                                    <td style="padding: 8px; border: 1px solid #000; font-weight: bold;">
+                                        Счёт:
+                                    </td>
+                                    <td style="padding: 8px; border: 1px solid #000;">
+                                        <span t-esc="doc.account_id.name"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Таблица транзакций -->
+                    <div class="oe_structure">
+                        <h2 style="font-size: 16px; font-weight: bold; margin-bottom: 15px; text-align: center;">
+                            ТРАНЗАКЦИИ
+                        </h2>
+                        <table style="width: 100%; border-collapse: collapse; font-size: 10px;">
+                            <thead>
+                                <tr style="background-color: #f0f0f0;">
+                                    <th style="padding: 8px; border: 1px solid #000; text-align: center; font-weight: bold;">
+                                        №
+                                    </th>
+                                    <th style="padding: 8px; border: 1px solid #000; text-align: center; font-weight: bold;">
+                                        Дата и время
+                                    </th>
+                                    <th style="padding: 8px; border: 1px solid #000; text-align: center; font-weight: bold;">
+                                        Тип операции
+                                    </th>
+                                    <th style="padding: 8px; border: 1px solid #000; text-align: center; font-weight: bold;">
+                                        Актив
+                                    </th>
+                                    <th style="padding: 8px; border: 1px solid #000; text-align: center; font-weight: bold;">
+                                        Количество
+                                    </th>
+                                    <th style="padding: 8px; border: 1px solid #000; text-align: center; font-weight: bold;">
+                                        Сумма
+                                    </th>
+                                    <th style="padding: 8px; border: 1px solid #000; text-align: center; font-weight: bold;">
+                                        Валюта
+                                    </th>
+                                    <th style="padding: 8px; border: 1px solid #000; text-align: center; font-weight: bold;">
+                                        Счёт
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="counter" t-value="1"/>
+                                <tr t-foreach="doc.transaction_ids" t-as="trans">
+                                    <td style="padding: 6px; border: 1px solid #000; text-align: center;">
+                                        <span t-esc="counter"/>
+                                    </td>
+                                    <td style="padding: 6px; border: 1px solid #000; text-align: center;">
+                                        <span t-esc="trans.transaction_datetime.strftime('%Y-%m-%d %H:%M')"/>
+                                    </td>
+                                    <td style="padding: 6px; border: 1px solid #000; text-align: center;">
+                                        <span t-esc="trans.operation_type == 'buy' and 'Покупка' or trans.operation_type == 'sell' and 'Продажа' or trans.operation_type == 'deposit' and 'Зачисление' or trans.operation_type == 'withdrawal' and 'Списание' or trans.operation_type == 'commission' and 'Комиссия' or trans.operation_type"/>
+                                    </td>
+                                    <td style="padding: 6px; border: 1px solid #000; text-align: center;">
+                                        <span t-esc="trans.asset_id.name if trans.asset_id else '-'"/>
+                                    </td>
+                                    <td style="padding: 6px; border: 1px solid #000; text-align: center;">
+                                        <span t-esc="trans.quantity"/>
+                                    </td>
+                                    <td style="padding: 6px; border: 1px solid #000; text-align: center;">
+                                        <span t-esc="trans.amount"/>
+                                    </td>
+                                    <td style="padding: 6px; border: 1px solid #000; text-align: center;">
+                                        <span t-esc="trans.currency"/>
+                                    </td>
+                                    <td style="padding: 6px; border: 1px solid #000; text-align: center;">
+                                        <span t-esc="trans.account_id.name"/>
+                                    </td>
+                                    <t t-set="counter" t-value="counter + 1"/>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Итоги -->
+                    <div class="oe_structure" style="margin-top: 30px;">
+                        <div style="border: 2px solid #000; padding: 15px;">
+                            <h2 style="font-size: 16px; font-weight: bold; margin-bottom: 15px; text-align: center;">
+                                ИТОГИ
+                            </h2>
+                            <table style="width: 100%; border-collapse: collapse;">
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid #000; font-weight: bold; width: 50%;">
+                                        Сумма покупок:
+                                    </td>
+                                    <td style="padding: 8px; border: 1px solid #000; text-align: right;">
+                                        <span t-esc="doc.total_buy"/> RUB
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid #000; font-weight: bold;">
+                                        Сумма продаж:
+                                    </td>
+                                    <td style="padding: 8px; border: 1px solid #000; text-align: right;">
+                                        <span t-esc="doc.total_sell"/> RUB
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid #000; font-weight: bold;">
+                                        Зачисления:
+                                    </td>
+                                    <td style="padding: 8px; border: 1px solid #000; text-align: right;">
+                                        <span t-esc="doc.total_deposit"/> RUB
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid #000; font-weight: bold;">
+                                        Списания:
+                                    </td>
+                                    <td style="padding: 8px; border: 1px solid #000; text-align: right;">
+                                        <span t-esc="doc.total_withdrawal"/> RUB
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid #000; font-weight: bold;">
+                                        Комиссии:
+                                    </td>
+                                    <td style="padding: 8px; border: 1px solid #000; text-align: right;">
+                                        <span t-esc="doc.total_commission"/> RUB
+                                    </td>
+                                </tr>
+                                <tr style="background-color: #f0f0f0;">
+                                    <td style="padding: 8px; border: 1px solid #000; font-weight: bold; font-size: 14px;">
+                                        ЧИСТЫЙ ДОХОД:
+                                    </td>
+                                    <td style="padding: 8px; border: 1px solid #000; text-align: right; font-size: 14px; font-weight: bold;">
+                                        <span t-esc="doc.total_income"/> RUB
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Подпись -->
+                    <div class="oe_structure" style="margin-top: 50px;">
+                        <table style="width: 100%;">
+                            <tr>
+                                <td style="width: 60%;">
+                                    <p style="margin-bottom: 50px;">
+                                        <strong>Дата формирования отчёта:</strong><br/>
+                                        <span t-esc="context_today"/>
+                                    </p>
+                                </td>
+                                <td style="width: 40%; text-align: center;">
+                                    <p style="margin-bottom: 50px;">
+                                        Подпись_________________
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </t>
+        </div>
+        </t>
+    </template>
+    <!-- Действие для отчёта -->
+    <record id="action_report_income" model="ir.actions.report">
+        <field name="name">Отчёт о доходах инвестора</field>
+        <field name="model">investor.income_report</field>
+        <field name="report_type">qweb-html</field>
+        <field name="report_name">investor.income_report</field>
+        <field name="report_file">income_report</field>
+        <field name="print_report_name">'Отчёт о доходах инвестора'</field>
+    </record>
+</odoo>

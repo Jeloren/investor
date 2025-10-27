@@ -58,3 +58,26 @@ class Transaction(models.Model):
         for record in self:
             if record.operation_type in ['buy', 'sell'] and not record.asset_id:
                 raise ValidationError("Для операций покупки или продажи необходимо указать актив.")
+
+    def open_account(self):
+        user = self.env.user
+        domain = []
+        if user.has_group('investor.group_investor_investor') and not user.has_group('investor.group_investor_admin'):
+            domain.append(('account_id.broker_id', '=', user.broker_id.id))
+            if user.investor_id:
+                domain.append(('account_id.investor_id', '=', user.investor_id.id))
+            else:
+                domain.append(('account_id.investor_id.user_id', '=', user.id))
+        if user.has_group('investor.group_investor_broker') and not user.has_group('investor.group_investor_admin'):
+            if user.broker_id:
+                domain.append(('account_id.broker_id', '=', user.broker_id.id))
+            else:
+                domain.append(('account_id.broker_id.user_id', '=', user.id))
+        return {
+            'name': 'Транзакции',
+            'type': 'ir.actions.act_window',
+            'res_model': 'investor.transaction',
+            'view_mode': 'tree,form',
+            'target': 'current',
+            'domain': domain
+        }
