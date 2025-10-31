@@ -77,7 +77,7 @@ class Transaction(models.Model):
             'name': 'Транзакции',
             'type': 'ir.actions.act_window',
             'res_model': 'investor.transaction',
-            'view_mode': 'tree,form',
+            'view_mode': 'tree,form,pivot,graph',
             'target': 'current',
             'domain': domain
         }
