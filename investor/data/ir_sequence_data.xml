@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="seq_investor_account" model="ir.sequence">
+            <field name="name">Номер счета инвестора</field>
+            <field name="code">investor.account</field>
+            <field name="prefix">ACC</field>
+            <field name="padding">5</field>
+        </record>
+    </data>
+</odoo>

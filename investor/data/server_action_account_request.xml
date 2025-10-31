@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_create_account_request" model="ir.actions.server">
+            <field name="name">Создать заявку на счет</field>
+            <field name="model_id" ref="model_investor_account_request"/>
+            <field name="state">code</field>
+            <field name="groups_id" eval="[(4, ref('investor.group_investor_investor'))]"/>
+            <field name="binding_model_id" ref="model_investor_account"/>
+            <field name="code"><![CDATA[
+user = env.user
+
+# Определяем инвестора
+investor = user.investor_id or env['investor.investor'].search([('user_id', '=', user.id)], limit=1)
+
+if not investor:
+    raise UserError("Ваш профиль инвестора не найден. Обратитесь к администратору.")
+
+broker = user.broker_id or False
+
+action = {
+    'name': 'Заявка на открытие счета',
+    'type': 'ir.actions.act_window',
+    'res_model': 'investor.account.request',
+    'view_mode': 'form',
+    'target': 'current',
+    'context': {
+        'default_investor_id': investor.id,
+        'default_broker_id': broker.id if broker else False,
+    }
+}
+            ]]></field>
+        </record>
+    </data>
+</odoo>

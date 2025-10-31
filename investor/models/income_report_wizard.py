@@ -8,10 +8,16 @@ class IncomeReportWizard(models.TransientModel):
     _description = 'Мастер отчёта о доходах инвестора'
 
     investor_id = fields.Many2one('investor.investor', string="Инвестор", required=True)
-    account_id = fields.Many2one('investor.account', string="Счёт (опционально)")
     date_from = fields.Date(string="Дата начала", required=True, default=lambda self: fields.Date.today() - timedelta(days=30))
     date_to = fields.Date(string="Дата окончания", required=True, default=fields.Date.context_today)
 
+    def _compute_dynamic_domain(self):  
+        if self.env.user.has_group('investor.group_investor_investor'):
+            return [('investor_id', '=', self.env.user.investor_id.id)]
+        return []
+
+    account_id = fields.Many2one('investor.account', string="Счёт (опционально)", domain=_compute_dynamic_domain)
+    
     @api.model
     def default_get(self, fields_list):
         """Автоматически выбирает инвестора для текущего пользователя"""

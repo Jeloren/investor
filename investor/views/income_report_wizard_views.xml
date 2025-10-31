@@ -8,7 +8,8 @@
                 <sheet>
                     <group>
                         <group>
-                            <field name="investor_id" widget="many2one" options="{'no_create': True}"/>
+                            <field name="investor_id" widget="many2one" readonly="1" groups="investor.group_investor_investor" options="{'no_create': True}"/>
+                            <field name="investor_id" widget="many2one" groups="investor.group_investor_broker,investor.group_investor_admin" options="{'no_create': True}"/>
                             <field name="account_id" 
                                    widget="many2one" 
                                    options="{'no_create': True}"

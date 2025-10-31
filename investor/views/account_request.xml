@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_account_request_form" model="ir.ui.view">
+            <field name="name">account.request.form</field>
+            <field name="model">investor.account.request</field>
+            <field name="arch" type="xml">
+                <form string="Заявка на открытие счета">
+                    <sheet>
+                        <group>
+                            <field name="investor_id" readonly="1"/>
+                            <field name="broker_id" readonly="1"/>
+                            <field name="account_type" readonly="id!=False"/>
+                            <field name="status" readonly="1"/>
+                            <field name="account_id" readonly="1"/>
+                        </group>
+
+                        </sheet>
+                        <footer>
+                            <button string="Одобрить" type="object" name="action_approve"
+                                    class="btn-primary"
+                                    invisible="status!='draft'"/>
+
+                            <button string="Отклонить" type="object" name="action_reject"
+                                    class="btn-danger"
+                                    invisible="status!='draft'"/>
+
+                            <button string="Сохранить" class="btn-primary" name="write"
+                                    invisible="id!=False"/>
+
+                            <button string="Закрыть" class="btn-secondary" special="cancel"/>
+                        </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
