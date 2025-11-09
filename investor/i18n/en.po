@@ -1,0 +1,809 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* investor
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-09 14:30+0000\n"
+"PO-Revision-Date: 2025-11-09 14:30+0000\n"
+"Last-Translator: \n"
+"Language-Team: English <en@li.org>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: investor
+#: model:ir.actions.report,print_report_name:investor.action_report_income
+msgid "'Отчёт о доходах инвестора'"
+msgstr "'Report about incomes of investor'"
+
+#. module: investor
+#: model_terms:ir.ui.view,arch_db:investor.income_report
+msgid ""
+"* Настоящий отчет сформирован автоматически и носит информационный характер. \n"
+"                                Расчет налога является предварительным и не учитывает все налоговые \n"
+"                                особенности (дивиденды, купоны, льгота долгосрочного владения). \n"
+"                                Для получения официальной справки обратитесь к вашему брокеру."
+msgstr ""
+"* Present report is formed automatically and carries informational character. \n"
+"                                Calculation of tax is preliminary and does not take into account all tax special features (dividends, coupons, long-term ownership benefit). \n"
+"                                For receiving official certificate apply to your broker."
+
+
+#. module: investor
+#: model_terms:ir.ui.view,arch_db:investor.income_report
+msgid "**Email:**"
+msgstr "**Email:**"
+
+#. module: investor
+#: model_terms:ir.ui.view,arch_db:investor.income_report
+msgid "**Дата рождения:**"
+msgstr "**Date of birth:**"
+
+#. module: investor
+#: model_terms:ir.ui.view,arch_db:investor.income_report
+msgid "**Дата формирования отчёта:**<br/>"
+msgstr "**Date of report generation:**<br/>"
+
+#. module: investor
+#: model_terms:ir.ui.view,arch_db:investor.income_report
+msgid "**Счёт:**"
+msgstr "**Account:**"
+
+#. module: investor
+#: model_terms:ir.ui.view,arch_db:investor.income_report
+msgid "**Телефон:**"
+msgstr "**Telephone:**"
+
+#. module: investor
+#: model_terms:ir.ui.view,arch_db:investor.income_report
+msgid "**ФИО:**"
+msgstr "**Full Name:**"
+
+#. module: investor
+#: model:ir.model.fields.selection,name:investor.selection__investor_currency__name__CNY
+msgid "CNY"
+msgstr "CNY"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_account__create_uid
+#: model:ir.model.fields,field_description:investor.field_investor_asset__create_uid
+#: model:ir.model.fields,field_description:investor.field_investor_broker__create_uid
+#: model:ir.model.fields,field_description:investor.field_investor_currency__create_uid
+#: model:ir.model.fields,field_description:investor.field_investor_investor__create_uid
+#: model:ir.model.fields,field_description:investor.field_investor_transaction__create_uid
+msgid "Created by"
+msgstr "Created by"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_account__create_date
+#: model:ir.model.fields,field_description:investor.field_investor_asset__create_date
+#: model:ir.model.fields,field_description:investor.field_investor_broker__create_date
+#: model:ir.model.fields,field_description:investor.field_investor_currency__create_date
+#: model:ir.model.fields,field_description:investor.field_investor_investor__create_date
+#: model:ir.model.fields,field_description:investor.field_investor_transaction__create_date
+msgid "Created on"
+msgstr "Created on"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_account__display_name
+#: model:ir.model.fields,field_description:investor.field_investor_asset__display_name
+#: model:ir.model.fields,field_description:investor.field_investor_broker__display_name
+#: model:ir.model.fields,field_description:investor.field_investor_currency__display_name
+#: model:ir.model.fields,field_description:investor.field_investor_investor__display_name
+#: model:ir.model.fields,field_description:investor.field_investor_transaction__display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: investor
+#: model:ir.model.fields.selection,name:investor.selection__investor_currency__name__EUR
+msgid "EUR"
+msgstr "EUR"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_account__id
+#: model:ir.model.fields,field_description:investor.field_investor_asset__id
+#: model:ir.model.fields,field_description:investor.field_investor_broker__id
+#: model:ir.model.fields,field_description:investor.field_investor_currency__id
+#: model:ir.model.fields,field_description:investor.field_investor_investor__id
+#: model:ir.model.fields,field_description:investor.field_investor_transaction__id
+msgid "ID"
+msgstr "ID"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_account__is_iis
+msgid "Is Iis"
+msgstr "Is Iis"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_account__write_uid
+#: model:ir.model.fields,field_description:investor.field_investor_asset__write_uid
+#: model:ir.model.fields,field_description:investor.field_investor_broker__write_uid
+#: model:ir.model.fields,field_description:investor.field_investor_currency__write_uid
+#: model:ir.model.fields,field_description:investor.field_investor_investor__write_uid
+#: model:ir.model.fields,field_description:investor.field_investor_transaction__write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_account__write_date
+#: model:ir.model.fields,field_description:investor.field_investor_asset__write_date
+#: model:ir.model.fields,field_description:investor.field_investor_broker__write_date
+#: model:ir.model.fields,field_description:investor.field_investor_currency__write_date
+#: model:ir.model.fields,field_description:investor.field_investor_investor__write_date
+#: model:ir.model.fields,field_description:investor.field_investor_transaction__write_date
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: investor
+#: model:ir.model.fields.selection,name:investor.selection__investor_currency__name__RUB
+msgid "RUB"
+msgstr "RUB"
+
+#. module: investor
+#: model:ir.model.fields.selection,name:investor.selection__investor_currency__name__USD
+msgid "USD"
+msgstr "USD"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_broker__user_id
+msgid "User"
+msgstr "User"
+
+#. module: investor
+#: model:ir.model.fields.selection,name:investor.selection__investor_investor__role__invest_admin
+msgid "Администратор инвестиций"
+msgstr "Administrator of investments"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_transaction__asset_id
+msgid "Актив"
+msgstr "Asset"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_asset__account_id
+msgid "Актив на Счете"
+msgstr "Asset on Account"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_account__active
+#: model:ir.model.fields,field_description:investor.field_investor_asset__active
+#: model:ir.model.fields,field_description:investor.field_investor_broker__active
+#: model:ir.model.fields,field_description:investor.field_investor_currency__active
+#: model:ir.model.fields,field_description:investor.field_investor_investor__active
+#: model:ir.model.fields,field_description:investor.field_investor_transaction__active
+msgid "Активен"
+msgstr "Active"
+
+#. module: investor
+#: model:ir.actions.act_window,name:investor.action_investor_asset
+#: model:ir.model.fields,field_description:investor.field_investor_account__asset_ids
+msgid "Активы"
+msgstr "Assets"
+
+#. module: investor
+#: model:ir.ui.menu,name:investor.menu_investor_asset_root
+msgid "Активы на счете"
+msgstr "Assets on account"
+
+#. module: investor
+#: model:ir.model.fields.selection,name:investor.selection__investor_asset__asset_type__share
+msgid "Акция"
+msgstr "Share"
+
+#. module: investor
+#: model:ir.ui.menu,name:investor.menu_investor_transaction_analysis
+msgid "Анализ Транзакций"
+msgstr "Analysis of Transactions"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_account__broker_id
+#: model:ir.model.fields,field_description:investor.field_investor_income_report__broker_id
+#: model:ir.model.fields,field_description:investor.field_investor_transaction__broker_id
+msgid "Брокер"
+msgstr "Broker"
+
+#. module: investor
+#: model:ir.model.fields.selection,name:investor.selection__investor_account__type__brokerage
+msgid "Брокерский"
+msgstr "Brokerage"
+
+#. module: investor
+#: model:ir.actions.act_window,name:investor.action_investor_broker
+#: model:ir.ui.menu,name:investor.menu_investor_broker_root
+msgid "Брокеры"
+msgstr "Brokers"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_account__currency_id
+#: model:ir.model.fields,field_description:investor.field_investor_asset__currency_id
+#: model:ir.model.fields,field_description:investor.field_investor_broker__currency_id
+#: model:ir.model.fields,field_description:investor.field_investor_income_report__currency_id
+#: model:ir.model.fields,field_description:investor.field_investor_transaction__currency_id
+msgid "Валюта"
+msgstr "Currency"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_asset__currency_nominal_id
+msgid "Валюта Номинала"
+msgstr "Currency of Face Value"
+
+#. module: investor
+#: model_terms:ir.ui.view,arch_db:investor.broker_login_form
+msgid "Войти как брокер"
+msgstr "Log in as broker"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_income_report__all_accounts
+msgid "Все счета (оставьте пустым)"
+msgstr "All accounts (leave empty)"
+
+#. module: investor
+#: model_terms:ir.ui.view,arch_db:investor.investor_login_form
+msgid "Вход для инвестора невозможен без выбора брокера. Пожалуйста, выберите брокера и попробуйте снова."
+msgstr "Login for investor is impossible without selection of broker. Please, select broker and try again."
+
+#. module: investor
+#: model_terms:ir.ui.view,arch_db:investor.investor_login_form
+msgid "Выберите брокера"
+msgstr "Select a broker"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_account__date_open
+msgid "Дата Открытия"
+msgstr "Date of Opening"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_investor__birth_date
+msgid "Дата Рождения"
+msgstr "Date of Birth"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_transaction__date_time
+msgid "Дата и Время"
+msgstr "Date and Time"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_income_report__date_end
+msgid "Дата окончания"
+msgstr "Date of end"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_income_report__date_start
+msgid "Дата начала"
+msgstr "Date of start"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_transaction__date_time
+msgid "Дата и время"
+msgstr "Date and time"
+
+#. module: investor
+#: model:ir.model.fields.selection,name:investor.selection__investor_account__type__depository
+msgid "Депозитарный"
+msgstr "Depository"
+
+#. module: investor
+#: model:ir.ui.menu,name:investor.menu_investor_transactions_detail
+msgid "Детализация операций"
+msgstr "Detailing of operations"
+
+#. module: investor
+#: model_terms:ir.ui.view,arch_db:investor.income_report
+msgid ""
+"Для счета ИИС (Индивидуальный Инвестиционный Счет) применяется особый режим. \n"
+"                                При использовании вычета типа \"Б\", доход от операций по счету освобождается от НДФЛ. Расчетный налог равен 0."
+msgstr ""
+"For account IIS (Individual Investment Account) is applied special regime. \n"
+"                                When using deduction of type \"B\", income from operations on account is exempted from PIT (Personal Income Tax). Calculated tax is equal to 0."
+
+#. module: investor
+#: model:ir.ui.menu,name:investor.menu_investor_currency_root
+msgid "Дополнительные детали"
+msgstr "Additional details"
+
+#. module: investor
+#: model_terms:ir.ui.view,arch_db:investor.income_report
+msgid "За период с"
+msgstr "For the period from"
+
+#. module: investor
+#: model:ir.model.fields.selection,name:investor.selection__investor_account__state__blocked
+msgid "Заблокирован"
+msgstr "Blocked"
+
+#. module: investor
+#: model:ir.model.fields.selection,name:investor.selection__investor_account__state__closed
+msgid "Закрыт"
+msgstr "Closed"
+
+#. module: investor
+#: model:ir.model.fields.selection,name:investor.selection__investor_account_application__state__closed
+msgid "Закрыть"
+msgstr "Close"
+
+#. module: investor
+#: model:ir.model.fields.selection,name:investor.selection__investor_transaction__operation_type__credit
+msgid "Зачисление"
+msgstr "Deposit/Credit"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_income_report__credit_total
+msgid "Зачисления"
+msgstr "Deposits/Credits"
+
+#. module: investor
+#: model:ir.actions.act_window,name:investor.action_investor_account_application
+#: model:ir.ui.menu,name:investor.menu_investor_account_application
+msgid "Заявка на открытие счета"
+msgstr "Application for opening an account"
+
+#. module: investor
+#: model:ir.model.fields.selection,name:investor.selection__investor_account__type__iis
+msgid "ИИС"
+msgstr "IIS (Individual Investment Account)"
+
+#. module: investor
+#: model:ir.ui.menu,name:investor.menu_investor_management_root
+msgid "Инвестиции"
+msgstr "Investments"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_account__investor_id
+#: model:ir.model.fields,field_description:investor.field_investor_income_report__investor_id
+#: model:ir.model.fields,field_description:investor.field_investor_transaction__investor_id
+msgid "Инвестор"
+msgstr "Investor"
+
+#. module: investor
+#: model:ir.actions.act_window,name:investor.action_investor_investor
+#: model:ir.ui.menu,name:investor.menu_investor_investor_root
+msgid "Инвесторы"
+msgstr "Investors"
+
+#. module: investor
+#: model_terms:ir.ui.view,arch_db:investor.investor_investor_form
+msgid "Информация об инвесторе"
+msgstr "Information about investor"
+
+#. module: investor
+#: model:ir.ui.menu,name:investor.menu_investor_transaction_history
+msgid "История Транзакций"
+msgstr "History of Transactions"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_income_report__net_income_after_tax
+msgid "Итоговый доход (после налога)"
+msgstr "Total income (after tax)"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_income_report__net_income
+msgid "Итоговый чистый доход"
+msgstr "Total net income"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_transaction__quantity
+msgid "Кол-во"
+msgstr "Qty"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_asset__quantity
+msgid "Количество"
+msgstr "Quantity"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_income_report__commission_total_expense
+msgid "Комиссии (Расход)"
+msgstr "Commissions (Expense)"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_income_report__commission_total_expense_rub
+msgid "Комиссии (расход)"
+msgstr "Commissions (expense)"
+
+#. module: investor
+#: model:ir.model.fields.selection,name:investor.selection__investor_transaction__operation_type__commission
+msgid "Комиссия"
+msgstr "Commission"
+
+#. module: investor
+#: model_terms:ir.ui.view,arch_db:investor.investor_investor_form
+msgid "Контактные Данные"
+msgstr "Contact Details"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_investor__phone
+msgid "Контактный Телефон"
+msgstr "Contact Phone"
+
+#. module: investor
+#: model:ir.model.constraint,message:investor.constraint_investor_investor_phone
+msgid "Контактный телефон должен быть уникальным."
+msgstr "Contact phone must be unique."
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_broker__license
+msgid "Лицензия"
+msgstr "License"
+
+#. module: investor
+#: model:ir.actions.act_window,name:investor.action_investor_income_report_wizard
+msgid "Мастер отчёта о доходах инвестора"
+msgstr "Wizard of report about incomes of investor"
+
+#. module: investor
+#: model:ir.model.fields.selection,name:investor.selection__investor_account_application__state__pending
+msgid "На рассмотрении"
+msgstr "Under consideration"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_asset__name
+#: model:ir.model.fields,field_description:investor.field_investor_broker__name
+#: model:ir.model.fields,field_description:investor.field_investor_currency__name
+msgid "Наименование"
+msgstr "Name/Title"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_income_report__taxable_base_calc
+msgid "Налогооблагаемая база"
+msgstr "Taxable base"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_income_report__taxable_base
+msgid "Налогооблагаемая база (по фин. результату)"
+msgstr "Taxable base (by fin. result)"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_account__number
+msgid "Номер Счета"
+msgstr "Account Number"
+
+#. module: investor
+#: model:ir.model.constraint,message:investor.constraint_investor_broker_license
+msgid "Номер лицензии должен быть уникальным."
+msgstr "License number must be unique."
+
+#. module: investor
+#: model:ir.model.constraint,message:investor.constraint_investor_account_number
+msgid "Номер счета должен быть уникальным."
+msgstr "Account number must be unique."
+
+#. module: investor
+#: model_terms:ir.ui.view,arch_db:investor.income_report
+msgid "ОТЧЁТ О ДОХОДАХ ИНВЕСТОРА"
+msgstr "REPORT ABOUT INCOMES OF INVESTOR"
+
+#. module: investor
+#: model:ir.model.fields.selection,name:investor.selection__investor_asset__asset_type__bond
+msgid "Облигация"
+msgstr "Bond"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_income_report__gross_financial_flow
+msgid "Общий фин. поток (до налога)"
+msgstr "Total fin. flow (before tax)"
+
+#. module: investor
+#: model:ir.model.fields.selection,name:investor.selection__investor_account_application__state__approved
+msgid "Одобрена"
+msgstr "Approved"
+
+#. module: investor
+#: model:ir.model.fields.selection,name:investor.selection__investor_account_application__state__approved
+msgid "Одобрить"
+msgstr "Approve"
+
+#. module: investor
+#: model:ir.actions.act_window,name:investor.action_investor_transaction
+#: model:ir.ui.menu,name:investor.menu_investor_transaction_root
+msgid "Операции"
+msgstr "Operations"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_transaction__description
+msgid "Описание"
+msgstr "Description"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_income_report__iis_tax_regime
+msgid "Особый налоговый режим (ИИС)"
+msgstr "Special tax regime (IIS)"
+
+#. module: investor
+#: model:ir.model.fields.selection,name:investor.selection__investor_account_application__state__rejected
+msgid "Отклонена"
+msgstr "Rejected"
+
+#. module: investor
+#: model:ir.model.fields.selection,name:investor.selection__investor_account_application__state__rejected
+msgid "Отклонить"
+msgstr "Reject"
+
+#. module: investor
+#: model:ir.model.fields.selection,name:investor.selection__investor_account_application__state__closed
+msgid "Отмена"
+msgstr "Cancel"
+
+#. module: investor
+#: model:ir.actions.report,name:investor.action_report_income
+msgid "Отчёт о доходах"
+msgstr "Report about incomes"
+
+#. module: investor
+#: model:ir.ui.menu,name:investor.menu_investor_income_report
+msgid "Отчёт о доходах инвестора"
+msgstr "Report about incomes of investor"
+
+#. module: investor
+#: model:ir.ui.menu,name:investor.menu_investor_reports_root
+msgid "Отчёты"
+msgstr "Reports"
+
+#. module: investor
+#: model_terms:ir.ui.view,arch_db:investor.investor_income_report_wizard_form
+msgid "Параметры отчёта о доходах"
+msgstr "Parameters of report about incomes"
+
+#. module: investor
+#: model_terms:ir.ui.view,arch_db:investor.income_report
+msgid "Подпись_________________"
+msgstr "Signature_________________"
+
+#. module: investor
+#: model:ir.model.fields.selection,name:investor.selection__investor_transaction__operation_type__buy
+msgid "Покупка"
+msgstr "Purchase/Buy"
+
+#. module: investor
+#: model:ir.model.fields.selection,name:investor.selection__investor_transaction__operation_type__replenishment
+msgid "Пополнения (Ввод ДС)"
+msgstr "Replenishments (Cash Input)"
+
+#. module: investor
+#: model:ir.model.fields.selection,name:investor.selection__investor_transaction__operation_type__sell
+msgid "Продажа"
+msgstr "Sale/Sell"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_income_report__calculated_tax
+msgid "Расчетный НДФЛ"
+msgstr "Calculated PIT"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_income_report__calculated_tax_to_pay
+msgid "Расчетный НДФЛ к уплате"
+msgstr "Calculated PIT for payment"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_investor__role
+msgid "Роль в инвестициях"
+msgstr "Role in investments"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_investor__user_id
+msgid "Связанный пользователь"
+msgstr "Related user"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_income_report__generate_report
+msgid "Сгенерировать отчёт"
+msgstr "Generate report"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_account_application__created_account_id
+msgid "Созданный счёт"
+msgstr "Created account"
+
+#. module: investor
+#: model:ir.ui.menu,name:investor.menu_create_account_application
+msgid "Создать заявку на счет"
+msgstr "Create application for account"
+
+#. module: investor
+#: model_terms:ir.ui.view,arch_db:investor.investor_investor_form
+msgid "Сохранить"
+msgstr "Save"
+
+#. module: investor
+#: model:ir.model.fields.selection,name:investor.selection__investor_transaction__operation_type__debit
+msgid "Списание"
+msgstr "Write-off/Withdrawal"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_income_report__debit_total
+msgid "Списания"
+msgstr "Write-offs/Withdrawals"
+
+#. module: investor
+#: model:ir.model.fields.selection,name:investor.selection__investor_transaction__operation_type__withdrawal
+msgid "Списания (Вывод ДС)"
+msgstr "Write-offs (Cash Output)"
+
+#. module: investor
+#: model:ir.ui.menu,name:investor.menu_investor_directories_root
+msgid "Справочники"
+msgstr "Directories"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_income_report__tax_rate
+msgid "Ставка НДФЛ"
+msgstr "PIT Rate"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_income_report__tax_rate_percentage
+msgid "Ставка налога (%)"
+msgstr "Tax rate (%)"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_account__state
+#: model:ir.model.fields,field_description:investor.field_investor_account_application__state
+msgid "Статус"
+msgstr "Status"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_transaction__amount
+msgid "Сумма"
+msgstr "Amount"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_transaction__amount_in_currency
+msgid "Сумма Транзакции"
+msgstr "Amount of Transaction"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_income_report__purchase_total_expense
+msgid "Сумма покупок (Расход)"
+msgstr "Amount of purchases (Expense)"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_income_report__purchase_total_expense_rub
+msgid "Сумма покупок (расход)"
+msgstr "Amount of purchases (expense)"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_income_report__sale_total_income
+msgid "Сумма продаж (Доход)"
+msgstr "Amount of sales (Income)"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_income_report__sale_total_income_rub
+msgid "Сумма продаж (доход)"
+msgstr "Amount of sales (income)"
+
+#. module: investor
+#: model:ir.actions.act_window,name:investor.action_investor_account
+#: model:ir.model.fields,field_description:investor.field_investor_account_application__account_id
+msgid "Счет"
+msgstr "Account"
+
+#. module: investor
+#: model:ir.ui.menu,name:investor.menu_investor_account_root
+msgid "Счета"
+msgstr "Accounts"
+
+#. module: investor
+#: model:ir.ui.menu,name:investor.menu_investor_account_history
+msgid "Счета инвестора"
+msgstr "Accounts of investor"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_income_report__account_id
+msgid "Счёт"
+msgstr "Account"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_income_report__account_ids
+msgid "Счёт (опционально)"
+msgstr "Account (optional)"
+
+#. module: investor
+#: model:ir.model.fields.selection,name:investor.selection__investor_account_application__state__created
+msgid "Счёт создан"
+msgstr "Account created"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_asset__ticker
+msgid "Тикер"
+msgstr "Ticker"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_asset__asset_type
+msgid "Тип Актива"
+msgstr "Type of Asset"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_transaction__operation_type
+msgid "Тип Операции"
+msgstr "Type of Operation"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_account__type
+msgid "Тип Счета"
+msgstr "Type of Account"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_account_application__account_type
+msgid "Тип Счёта"
+msgstr "Type of Account"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_transaction__operation_type
+msgid "Тип операции"
+msgstr "Type of operation"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_account__transaction_ids
+msgid "Транзакции"
+msgstr "Transactions"
+
+#. module: investor
+#: model_terms:ir.ui.view,arch_db:investor.income_report
+msgid "Транзакции за выбранный период отсутствуют."
+msgstr "Transactions for selected period are absent."
+
+#. module: investor
+#: model:ir.ui.menu,name:investor.menu_investor_transaction_root
+msgid "Транзакции инвестора"
+msgstr "Transactions of investor"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_account_application__transaction_id
+msgid "Транзакция"
+msgstr "Transaction"
+
+#. module: investor
+#: model:ir.ui.menu,name:investor.menu_investor_root
+msgid "Управление Инвестициями"
+msgstr "Management of Investments"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_investor__name
+#: model:ir.model.fields,field_description:investor.field_res_users__r_inv_name
+msgid "ФИО"
+msgstr "Full Name"
+
+#. module: investor
+#: model_terms:ir.ui.view,arch_db:investor.income_report
+msgid "Финансовые итоги"
+msgstr "Financial totals"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_income_report__financial_result
+#: model_terms:ir.ui.view,arch_db:investor.income_report
+msgid "Финансовый результат (от сделок)"
+msgstr "Financial result (from deals)"
+
+#. module: investor
+#: model:ir.model.fields.selection,name:investor.selection__investor_asset__asset_type__fund
+msgid "Фонд"
+msgstr "Fund"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_asset__unit_price
+msgid "Цена за Единицу"
+msgstr "Price per Unit"
+
+#. module: investor
+#: model:ir.model.fields,field_description:investor.field_investor_investor__email
+#: model:ir.model.fields,field_description:investor.field_res_users__r_email
+msgid "Электронная Почта"
+msgstr "Electronic Mail"
+
+#. module: investor
+#: model:ir.model.constraint,message:investor.constraint_investor_investor_email
+msgid "Электронная почта должна быть уникальной."
+msgstr "Electronic mail must be unique."
+
+#. module: investor
+#: model:ir.model.constraint,message:investor.constraint_investor_asset_unique
+msgid "Этот актив уже существует на данном счете."
+msgstr "This asset already exists on this account."
+
+#. module: investor
+#: model_terms:ir.ui.view,arch_db:investor.income_report
+msgid "по"
+msgstr "to"
